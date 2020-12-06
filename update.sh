@@ -1,0 +1,1 @@
+rsync -av  ./public/ ../yoursite/
