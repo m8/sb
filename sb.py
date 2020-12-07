@@ -29,7 +29,9 @@ for blog_post in files:
         posts[date_name] = header_name
         with open("./public/{}{}_{}.html".format(directory,createUrl(header_name),date_name), 'w+') as f:
             f.write("""<!DOCTYPE html>\n<html lang=\"{}\">\n<head>\n<title>{}</title>\n<link rel='stylesheet' type='text/css' href='{}'>\n<meta charset='utf-8'/>\n</head>\n<body>\n<h1>{}</h1>\n<!-- SBc -->{}<!-- SBc -->\n</body>\n\n</html>""".format(html_lang,header_name,css,header_name,post))
-    
+
+posts = sorted(posts.items(), reverse=True) 
+
 # create blog index
 blog_index = open("./public/blogindex.html","r+")
 blog_index.seek(0)
