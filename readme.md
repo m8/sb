@@ -33,3 +33,5 @@ your blog post will be listed under ```<!-- SB -->``` line.
 ## Todo
 * Sort by date
 * Some kind of history file to track unnecessary file creation
+* RSS feed
+
