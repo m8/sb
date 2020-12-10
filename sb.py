@@ -4,9 +4,10 @@ import os
 
 name = "name"
 address = "https://github.com"
-directory= "blog/"
+directory= "/blog/"
 css = "../assets/stylesheet/main.css"
 html_lang = "en"
+site_description = "site description"
 
 # Get Blog Pages Under Blog
 files = glob.glob("./blog/*.html")
@@ -33,14 +34,25 @@ for blog_post in files:
 posts = sorted(posts.items(), reverse=True) 
 
 # create blog index
-blog_index = open("./templates/blogindex.html","r+")
-blog_index.seek(0)
-index_lines = blog_index.readlines()
+blog_template = open("./templates/blogindex.html","r+")
+rss_template = open("./templates/rss.xml","r+")
+
+index_lines = blog_template.readlines()
+rss_lines = rss_template.readlines()
 # it should directly get SB from lines
-lc = index_lines.index("<!-- SB -->\n")
+index_sb_line = index_lines.index("<!-- SB -->\n")
+rss_sb_line = rss_lines.index("<!-- SB RSS -->\n")
+
 line = ""
+rss_txt = ""
 for s in posts:
-    line += "\n" +  "<li>{} &ndash; <a href=\"blog/{}_{}.html\">{}</a></li>\n".format(s[0],createUrl(s[1]),s[0],createUrl(s[1]))
-index_lines[lc] += line
+    line += "\n <li>{} &ndash; <a href=\"blog/{}_{}.html\">{}</a></li>\n".format(s[0],createUrl(s[1]),s[0],createUrl(s[1]))
+    rss_txt +=  "\n <item><title>{}</title> <link>{}{}{}_{}.html</link> <pubDate>{}</pubDate> </item>".format(s[1],address,directory,createUrl(s[1]),s[0],s[0])
+index_lines[index_sb_line] += line
+rss_lines[rss_sb_line] += rss_txt
 with open('./public/blogindex.html', 'w') as file:
-    file.writelines( index_lines )
+    file.writelines(index_lines)
+with open('./public/rss.xml', 'w') as rss_file:
+    rss_file.writelines(rss_lines)
+
+# create rss file

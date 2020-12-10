@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>My Site - SB</title>
+  <link>https://github.com/m8/sb</link>
+  <description>Desc</description>
+<!-- SB RSS -->
+
+ <item><title> Simple Blog 2 </title> <link>https://github.com/blog/_simple_blog_2__2020-08-08.html</link> <pubDate>2020-08-08</pubDate> </item>
+ <item><title> Simple Blog 1 </title> <link>https://github.com/blog/_simple_blog_1__2020-08-07.html</link> <pubDate>2020-08-07</pubDate> </item>    
+ 
+</channel>
+
+</rss> 

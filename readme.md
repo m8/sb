@@ -31,8 +31,9 @@ python3 sb.py
 ``` 
 your blog post will be listed under ```<!-- SB -->``` line.
 
-## Todo
-* Sort by date
-* Some kind of history file to track unnecessary file creation
-* RSS feed
+## Rss Feed
+You can also create RSS feed. Rss description will be added
 
+## Todo
+* Some kind of history file to track unnecessary file creation
+* RSS description
