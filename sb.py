@@ -33,7 +33,7 @@ for blog_post in files:
 posts = sorted(posts.items(), reverse=True) 
 
 # create blog index
-blog_index = open("./public/blogindex.html","r+")
+blog_index = open("./templates/blogindex.html","r+")
 blog_index.seek(0)
 index_lines = blog_index.readlines()
 # it should directly get SB from lines
