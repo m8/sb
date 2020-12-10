@@ -12,6 +12,7 @@ sb is not complete blog system like lb. In sb you can just create blog index pag
 --blog/
 ---example1_2020.html
 ---example2_2020.html
+-templates
 ```
 
 ## In Blog Folder
